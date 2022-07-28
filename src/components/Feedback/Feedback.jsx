@@ -1,21 +1,19 @@
-import React from 'react';
-
-const Feedback = ({ options, onLeaveFeedback }) => (
-  <div>
-    {Object.keys(options).map((arNum, key) => {
-      return (
+const Feedback = ({ options, onLeaveFeedback }) => {
+  return (
+    <div>
+      {options.map(option => (
         <button
-          key={key}
+          key={option}
           type="button"
-          name={arNum}
-          value={arNum}
-          onClick={onLeaveFeedback}
+          onClick={() => {
+            onLeaveFeedback(option);
+          }}
         >
-          {arNum}
+          {option}
         </button>
-      );
-    })}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 export default Feedback;
