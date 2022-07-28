@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Feedback from './Feedback/Feedback';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
@@ -59,15 +59,14 @@ const App = () => {
   );
 };
 
-// class OldApp extends Component {
-//   static propTypes = {
-//     state: PropTypes.arrayOf(
-//       PropTypes.exact({
-//         good: PropTypes.number.isRequired,
-//         neutral: PropTypes.number.isRequired,
-//         bad: PropTypes.number.isRequired,
-//       })
-//     ),
-//   };
-// }
+App.propTypes = {
+  state: PropTypes.arrayOf(
+    PropTypes.exact({
+      good: PropTypes.number.isRequired,
+      neutral: PropTypes.number.isRequired,
+      bad: PropTypes.number.isRequired,
+    })
+  ),
+};
+
 export default App;
